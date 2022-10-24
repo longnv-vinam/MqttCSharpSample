@@ -1,0 +1,4 @@
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\Application1\obj\Debug\Application1.csproj.AssemblyReference.cache
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\Application1\obj\Debug\Application1.csproj.SuggestedBindingRedirects.cache
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\Application1\obj\Debug\Application1.Form1.resources
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\Application1\obj\Debug\Application1.csproj.GenerateResource.cache

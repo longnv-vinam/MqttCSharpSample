@@ -1,0 +1,14 @@
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\bin\Debug\App2.exe.config
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\bin\Debug\App2.exe
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\bin\Debug\App2.pdb
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\bin\Debug\M2Mqtt.Net.dll
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\bin\Debug\M2Mqtt.Net.pdb
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\obj\Debug\App2.csproj.AssemblyReference.cache
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\obj\Debug\App2.csproj.SuggestedBindingRedirects.cache
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\obj\Debug\App2.Form1.resources
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\obj\Debug\App2.Properties.Resources.resources
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\obj\Debug\App2.csproj.GenerateResource.cache
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\obj\Debug\App2.csproj.CoreCompileInputs.cache
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\obj\Debug\App2.csproj.CopyComplete
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\obj\Debug\App2.exe
+C:\Users\long.nv\Source\Repos\MqttCSharpSample\App2\obj\Debug\App2.pdb
