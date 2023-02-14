@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
-using uPLibrary.Networking.M2Mqtt.Utility;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace App2
+namespace App1
 {
-    public partial class Form1 : Form
+    public partial class App1 : Form
     {
         MqttClient mqttClient;
 
-        public Form1()
+        public App1()
         {
             InitializeComponent();
         }
@@ -27,11 +27,13 @@ namespace App2
         {
             Task.Run(() =>
             {
-                mqttClient = new MqttClient("192.168.0.50");
+                //label1.Text = "Connectting...";
+                mqttClient = new MqttClient("222.111.55.6");
                 mqttClient.MqttMsgPublishReceived += MqttClient_MqttMsgPublishReceived;
-                mqttClient.Subscribe(new string[] { "Application1/Message" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE });
-                mqttClient.Connect("APP2", "vinam", "Vinam@123456",false, 0 , true, "LWT/APP2", "OffLine", true, 60);
-                mqttClient.Publish("LWT/APP2", Encoding.UTF8.GetBytes("OnLine"),0,false);
+                mqttClient.Subscribe(new string[] { "Application1/Message", "Application1/Alarm" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE });
+                mqttClient.Connect("APP1", "vinammqtt", "Vinam@12345", false, 0, true, "LWT/APP1", "OffLine", true, 60);
+                mqttClient.Publish("LWT/APP1", Encoding.UTF8.GetBytes("OnLine"), 0, false);
+                //label1.Text = "Connectted...";
             });
         }
 
@@ -43,6 +45,14 @@ namespace App2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(mqttClient.IsConnected)
+            {
+                label1.Text = "is Conected";
+            }
+            else
+            {
+                label1.Text = "is Not Conected";
+            }
             Task.Run(() =>
             {
                 if (mqttClient != null && mqttClient.IsConnected)

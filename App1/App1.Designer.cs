@@ -1,6 +1,6 @@
 ﻿namespace App1
 {
-    partial class Form1
+    partial class App1
     {
         /// <summary>
         /// Required designer variable.

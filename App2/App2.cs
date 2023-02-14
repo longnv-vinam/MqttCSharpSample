@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
+using uPLibrary.Networking.M2Mqtt.Utility;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace App1
+namespace App2
 {
-    public partial class Form1 : Form
+    public partial class App2 : Form
     {
         MqttClient mqttClient;
 
-        public Form1()
+        public App2()
         {
             InitializeComponent();
         }
@@ -26,13 +27,11 @@ namespace App1
         {
             Task.Run(() =>
             {
-                //label1.Text = "Connectting...";
-                mqttClient = new MqttClient("192.168.0.50");
+                mqttClient = new MqttClient("222.111.55.6");
                 mqttClient.MqttMsgPublishReceived += MqttClient_MqttMsgPublishReceived;
                 mqttClient.Subscribe(new string[] { "Application2/Message" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE });
-                mqttClient.Connect("APP1", "vinam", "Vinam@123456", false, 0, true, "LWT/APP1", "OffLine", true, 60);
-                mqttClient.Publish("LWT/APP1", Encoding.UTF8.GetBytes("OnLine"), 0, false);
-                //label1.Text = "Connectted...";
+                mqttClient.Connect("APP2", "vinammqtt", "Vinam@12345",false, 0 , true, "LWT/APP2", "OffLine", true, 60);
+                mqttClient.Publish("LWT/APP2", Encoding.UTF8.GetBytes("OnLine"),0,false);
             });
         }
 
@@ -42,21 +41,24 @@ namespace App1
             listBox1.Invoke((MethodInvoker)(() => listBox1.Items.Add(message)));
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSendMessage_Click(object sender, EventArgs e)
         {
-            if(mqttClient.IsConnected)
-            {
-                label1.Text = "is Conected";
-            }
-            else
-            {
-                label1.Text = "is Not Conected";
-            }
             Task.Run(() =>
             {
                 if (mqttClient != null && mqttClient.IsConnected)
                 {
-                    mqttClient.Publish("Application1/Message", Encoding.UTF8.GetBytes(textBox1.Text));
+                    mqttClient.Publish("Application1/Message", Encoding.UTF8.GetBytes(txtMessage.Text));
+                }
+            });
+        }
+
+        private void btnSendAlarm_Click(object sender, EventArgs e)
+        {
+            Task.Run(() =>
+            {
+                if (mqttClient != null && mqttClient.IsConnected)
+                {
+                    mqttClient.Publish("Application1/Alarm", Encoding.UTF8.GetBytes(txtAlarm.Text));
                 }
             });
         }
